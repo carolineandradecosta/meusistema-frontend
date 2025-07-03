@@ -1,0 +1,23 @@
+{
+  "fornecedores": [
+    {
+      "id": "99ca",
+      "nome": "Caroline Andrade",
+      "email": "caroline@gmail.com",
+      "cnpj": "45987222000188",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430480",
+        "logradouro": "Rua Rita Pereira de Araújo",
+        "numero": "555",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    }
+  ],
+  "produtos": [],
+  "clientes": []
+}
