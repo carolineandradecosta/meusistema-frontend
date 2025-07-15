@@ -1,15 +1,117 @@
 {
   "fornecedores": [
     {
-      "id": "99ca",
-      "nome": "Caroline Andrade",
-      "email": "caroline@gmail.com",
-      "cnpj": "45987222000188",
+      "id": "8b9a",
+      "nome": "Fornecedor Alimento",
+      "email": "alimento@gmail.com",
+      "cnpj": "35178113000166",
       "tipoFornecedor": "COMUM",
       "endereco": {
         "cep": "58430480",
         "logradouro": "Rua Rita Pereira de Araújo",
+        "numero": "845",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "45f9",
+      "nome": "Fornecedor 3",
+      "email": "fornecedor3@gmail.com",
+      "cnpj": "63854883000117",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430480",
+        "logradouro": "Rua Rita Pereira de Araújo",
+        "numero": "777",
+        "complemento": "CASA",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "4808",
+      "nome": "fornecedor roupas",
+      "email": "roupas@gmail.com",
+      "cnpj": "74390768000155",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
+        "numero": "338",
+        "complemento": "Casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "897d",
+      "nome": "Fornecedor eletrônicos",
+      "email": "eletronicos@gmail.com",
+      "cnpj": "06422331000104",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
         "numero": "555",
+        "complemento": "Casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": ""
+      }
+    },
+    {
+      "id": "bdd4",
+      "nome": "Fornecedor Frios",
+      "email": "frios@gmail.com",
+      "cnpj": "05746454000120",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430600",
+        "logradouro": "Rua Florípedes Coutinho",
+        "numero": "897",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "387c",
+      "nome": "Fornecedor Tijolo",
+      "email": "tijolo@gmail.com",
+      "cnpj": "67372591000107",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430600",
+        "logradouro": "Rua Florípedes Coutinho",
+        "numero": "456",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "82c5",
+      "nome": "Fornecedor água",
+      "email": "agua@gmail.com",
+      "cnpj": "60287528000115",
+      "tipoFornecedor": "COMUM",
+      "endereco": {
+        "cep": "58430600",
+        "logradouro": "Rua Florípedes Coutinho",
+        "numero": "123",
         "complemento": "",
         "bairro": "Bodocongó",
         "cidade": "Campina Grande",
