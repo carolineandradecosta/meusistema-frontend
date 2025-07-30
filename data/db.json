@@ -2,7 +2,7 @@
   "fornecedores": [
     {
       "id": "8b9a",
-      "nome": "Fornecedor Alimento",
+      "nome": "Fornecedor Alimento 1",
       "email": "alimento@gmail.com",
       "cnpj": "35178113000166",
       "tipoFornecedor": "COMUM",
@@ -19,8 +19,8 @@
     },
     {
       "id": "45f9",
-      "nome": "Fornecedor 3",
-      "email": "fornecedor3@gmail.com",
+      "nome": "Fornecedor 4",
+      "email": "fornecedor4@gmail.com",
       "cnpj": "63854883000117",
       "tipoFornecedor": "COMUM",
       "endereco": {

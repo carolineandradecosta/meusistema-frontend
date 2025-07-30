@@ -76,6 +76,8 @@ const FornecedorList = () => {
                 <td>{fornecedor.tipoFornecedor}</td>
                 <td>
                   <Button
+                    as={Link}
+                    to={`/editar-fornecedor/${fornecedor.id}`}
                     variant="warning"
                     size="sm"
                     className="me-2"
