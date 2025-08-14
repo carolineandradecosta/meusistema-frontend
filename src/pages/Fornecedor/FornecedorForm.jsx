@@ -278,7 +278,7 @@ const FornecedorForm = () => {
                 </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    Fornecedor adicionado com sucesso!
+                    { id ? 'Fornecedor editado com sucesso' : 'Fornecedor adicionado com sucesso' }
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="success" onClick={() => navigate( '/listar-fornecedores')}>Fechar</Button>

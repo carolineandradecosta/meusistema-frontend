@@ -109,10 +109,10 @@ const FornecedorList = () => {
             Confirmar exclusão
           </Modal.Title>
         </Modal.Header>
-        <ModalBody>
+        <Modal.Body>
           Tem certeza que deseja excluir o fornecedor:{' '}<strong>{fornecedorSelecionado?.nome}
           </strong>
-        </ModalBody>
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secundary" onClick={fecharModal}>Cancelar</Button>
           <Button variant="danger" onClick={removerFornecedor}>Excluir</Button>

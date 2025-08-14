@@ -1,26 +1,9 @@
 {
   "fornecedores": [
     {
-      "id": "8b9a",
-      "nome": "Fornecedor Alimento 1",
-      "email": "alimento@gmail.com",
-      "cnpj": "35178113000166",
-      "tipoFornecedor": "COMUM",
-      "endereco": {
-        "cep": "58430480",
-        "logradouro": "Rua Rita Pereira de Araújo",
-        "numero": "845",
-        "complemento": "",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
       "id": "45f9",
-      "nome": "Fornecedor 4",
-      "email": "fornecedor4@gmail.com",
+      "nome": "Fornecedor 1",
+      "email": "fornecedor1@gmail.com",
       "cnpj": "63854883000117",
       "tipoFornecedor": "COMUM",
       "endereco": {
@@ -121,5 +104,74 @@
     }
   ],
   "produtos": [],
-  "clientes": []
+  "clientes": [
+    {
+      "id": "7832",
+      "nome": "Cliente 1",
+      "cpf": "82316398618",
+      "email": "cliente1@gmail.com",
+      "telefone": "839999999",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
+        "numero": "111",
+        "complemento": "casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "ef50",
+      "nome": "Cliente 2",
+      "cpf": "85866323842",
+      "email": "cliente2@gmail.com",
+      "telefone": "839999999",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
+        "numero": "123",
+        "complemento": "Casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "295b",
+      "nome": "Cliente 3",
+      "cpf": "85866323842",
+      "email": "cliente3@gmail.com",
+      "telefone": "839999999",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
+        "numero": "123",
+        "complemento": "Casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    },
+    {
+      "id": "660c",
+      "nome": "Cliente 4",
+      "cpf": "85866323842",
+      "email": "cliente4@gmail.com",
+      "telefone": "839999999",
+      "endereco": {
+        "cep": "58430460",
+        "logradouro": "Rua Antônio Vieira da Rocha",
+        "numero": "123",
+        "complemento": "Casa",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil"
+      }
+    }
+  ]
 }
