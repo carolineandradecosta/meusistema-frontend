@@ -103,7 +103,32 @@
       }
     }
   ],
-  "produtos": [],
+  "produtos": [
+    {
+      "id": "8715",
+      "nome": "Geladeira",
+      "preco": "4000.00",
+      "descricao": "Resfriamento",
+      "quantidadeEstoque": "5",
+      "fornecedorId": "897d"
+    },
+    {
+      "id": "f79a",
+      "nome": "Mouse",
+      "preco": "120.00",
+      "descricao": "Sem fio",
+      "quantidadeEstoque": "50",
+      "fornecedorId": "897d"
+    },
+    {
+      "id": "f85e",
+      "nome": "Teclado",
+      "preco": "50.45",
+      "descricao": "Mecânico, sem fio",
+      "quantidadeEstoque": "15",
+      "fornecedorId": "45f9"
+    }
+  ],
   "clientes": [
     {
       "id": "7832",

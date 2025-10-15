@@ -86,7 +86,7 @@ const FornecedorForm = () => {
 
         /*axios.post(`${apiUrl}/fornecedores`, fornecedorData)
         .then(response => {
-            console.log("Fornecedor cadastro com sucesso: ", response)
+            console.log("Fornecedor cadastrado com sucesso: ", response)
             setModalAberto(true)
         })
         .catch(error => console.error("Erro ao cadastrar fornecedor: ", error))*/

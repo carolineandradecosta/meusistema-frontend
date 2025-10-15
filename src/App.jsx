@@ -6,6 +6,7 @@ import Menu from './components/Menu'
 import FornecedorList from './pages/Fornecedor/FornecedorList'
 import ClienteForm from './pages/Cliente/ClienteForm'
 import ClienteList from './pages/Cliente/ClienteList'
+import ProdutoForm from './pages/Produto/ProdutoForm'
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
       <Route path="/cadastrar-cliente" element={<ClienteForm />} />
       <Route path="/listar-clientes" element={<ClienteList />} />
       <Route path="/editar-cliente/:id" element={<ClienteForm />} />
+      <Route path="/cadastrar-produto" element={<ProdutoForm />} />
+
     </Routes>
     </BrowserRouter>
   )
