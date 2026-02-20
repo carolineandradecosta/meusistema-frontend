@@ -1,8 +1,24 @@
-# Meu Sistema Front-end
+# 📦 Gerenciador de Produtos (Frontend)
 
-Projeto Front-end em ReactJS do Curso Presencial Programação Fullstack
+## 💻 Descrição do Projeto
 
-## Bibliotecas:
+Este repositório contém a interface de usuário (Frontend) da aplicação **Gerenciador de Produtos**. Ele é a camada visual responsável por toda a interação do usuário com a API de Back-end.
+
+O objetivo principal deste projeto é fornecer uma interface **intuitiva e responsiva** para o gerenciamento completo de recursos essenciais, funcionando como o painel de controle do sistema.
+
+### 📌 Funcionalidades Chave
+
+O Frontend implementa o **CRUD (Criação, Leitura, Atualização e Exclusão)** completo, permitindo a gestão das seguintes entidades, que são gerenciadas pelo Back-end:
+
+* **Clientes**
+* **Fornecedores**
+* **Produtos**
+* **Usuários**
+* **Endereços**
+
+---
+
+## 🛠️ Bibliotecas:
 - axios
 - json-server
 - react-bootstrap bootstrap
@@ -33,3 +49,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
     "clientes": []
 }
 ```
+
+## 🔗 API de Integração (Backend)
+
+O Frontend consome a **API Gerenciador de Produtos**, que é o núcleo de processamento e dados do sistema.
+
+**Repositório:** [carolineandradecosta/meusistema-backend](https://github.com/carolineandradecosta/meusistema-backend)
+
+---
+
+## 📌 Status do Projeto
+🚧 Em andamento – novas funcionalidades ainda estão sendo implementadas.
