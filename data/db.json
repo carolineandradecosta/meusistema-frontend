@@ -1,197 +1,150 @@
 {
   "fornecedores": [
     {
-      "id": "45f9",
-      "nome": "Fornecedor 1",
-      "email": "fornecedor1@gmail.com",
-      "cnpj": "63854883000117",
-      "tipoFornecedor": "COMUM",
+      "id": 1,
+      "nomeFantasia": "programa AI LTDA",
+      "email": "contato@programaai.dev",
+      "cnpj": "12345678912345",
+      "tipoFornecedor": "PREMIUM",
+      "endereco": null
+    },
+    {
+      "id": 3,
+      "nomeFantasia": "programa AI LTDA 3",
+      "email": "contato@programaai.dev",
+      "cnpj": "12345678912347",
+      "tipoFornecedor": "PREMIUM",
+      "endereco": null
+    },
+    {
+      "id": 4,
+      "nomeFantasia": "programa AI LTDA 44",
+      "email": "contato@programaai.dev",
+      "cnpj": "12345678912348",
+      "tipoFornecedor": "PREMIUM",
+      "endereco": null
+    },
+    {
+      "id": 7,
+      "nomeFantasia": "programa AI LTDA 6",
+      "email": "kimbra9302@uorak.com",
+      "cnpj": "45522518000123",
+      "tipoFornecedor": "PREMIUM",
+      "endereco": null
+    },
+    {
+      "id": 9,
+      "nomeFantasia": "programa AI LTDA 10",
+      "email": "kimbra9302@dev.com",
+      "cnpj": "27236827000155",
+      "tipoFornecedor": "PREMIUM",
+      "endereco": null
+    },
+    {
+      "id": 12,
+      "nomeFantasia": "programa AI LTDA 12",
+      "email": "exiquio9516@uorak.com",
+      "cnpj": "46689321000146",
+      "tipoFornecedor": "PREMIUM",
       "endereco": {
-        "cep": "58430480",
-        "logradouro": "Rua Rita Pereira de Araújo",
-        "numero": "777",
-        "complemento": "CASA",
+        "logradouro": "Rua Antônio Cavalcanti",
+        "numero": "454",
+        "complemento": "",
         "bairro": "Bodocongó",
         "cidade": "Campina Grande",
         "estado": "Paraíba",
-        "pais": "Brasil"
+        "pais": "Brasil",
+        "cep": "58430440"
       }
     },
     {
-      "id": "4808",
-      "nome": "fornecedor roupas",
-      "email": "roupas@gmail.com",
-      "cnpj": "74390768000155",
-      "tipoFornecedor": "COMUM",
+      "id": 5,
+      "nomeFantasia": "programa AI LTDA 5 atualizado",
+      "email": "contato@programaai.dev",
+      "cnpj": "12345678912349",
+      "tipoFornecedor": "PREMIUM",
       "endereco": {
-        "cep": "58430460",
-        "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "338",
-        "complemento": "Casa",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "897d",
-      "nome": "Fornecedor eletrônicos",
-      "email": "eletronicos@gmail.com",
-      "cnpj": "06422331000104",
-      "tipoFornecedor": "COMUM",
-      "endereco": {
-        "cep": "58430460",
-        "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "555",
-        "complemento": "Casa",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": ""
-      }
-    },
-    {
-      "id": "bdd4",
-      "nome": "Fornecedor Frios",
-      "email": "frios@gmail.com",
-      "cnpj": "05746454000120",
-      "tipoFornecedor": "COMUM",
-      "endereco": {
-        "cep": "58430600",
         "logradouro": "Rua Florípedes Coutinho",
         "numero": "897",
         "complemento": "",
         "bairro": "Bodocongó",
         "cidade": "Campina Grande",
         "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "387c",
-      "nome": "Fornecedor Tijolo",
-      "email": "tijolo@gmail.com",
-      "cnpj": "67372591000107",
-      "tipoFornecedor": "COMUM",
-      "endereco": {
-        "cep": "58430600",
-        "logradouro": "Rua Florípedes Coutinho",
-        "numero": "456",
-        "complemento": "",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "82c5",
-      "nome": "Fornecedor água",
-      "email": "agua@gmail.com",
-      "cnpj": "60287528000115",
-      "tipoFornecedor": "COMUM",
-      "endereco": {
-        "cep": "58430600",
-        "logradouro": "Rua Florípedes Coutinho",
-        "numero": "123",
-        "complemento": "",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
+        "pais": "Brasil",
+        "cep": "58430600"
       }
     }
   ],
   "produtos": [
     {
-      "id": "8715",
-      "nome": "Geladeira",
-      "preco": "4000.00",
-      "descricao": "Resfriamento",
-      "quantidadeEstoque": "5",
-      "fornecedorId": "897d"
-    },
-    {
-      "id": "f79a",
-      "nome": "Mouse",
-      "preco": "120.00",
-      "descricao": "Sem fio",
-      "quantidadeEstoque": "50",
-      "fornecedorId": "897d"
-    },
-    {
-      "id": "f85e",
-      "nome": "Teclado",
-      "preco": "50.45",
-      "descricao": "Mecânico, sem fio",
-      "quantidadeEstoque": "15",
-      "fornecedorId": "45f9"
+      "id": 1,
+      "nome": "Feijão",
+      "preco": 6.87,
+      "descricao": "Feijão Carioca",
+      "quantidadeEstoque": 55,
+      "fornecedor": {
+        "id": 5,
+        "nomeFantasia": "programa AI LTDA 5 atualizado",
+        "email": "contato@programaai.dev",
+        "cnpj": "12345678912349",
+        "tipoFornecedor": "PREMIUM",
+        "endereco": {
+          "logradouro": "Rua Florípedes Coutinho",
+          "numero": "897",
+          "complemento": "",
+          "bairro": "Bodocongó",
+          "cidade": "Campina Grande",
+          "estado": "Paraíba",
+          "pais": "Brasil",
+          "cep": "58430600"
+        }
+      }
     }
   ],
   "clientes": [
     {
-      "id": "7832",
-      "nome": "Cliente 1",
-      "cpf": "82316398618",
-      "email": "cliente1@gmail.com",
-      "telefone": "839999999",
+      "id": 1,
+      "nome": "Caroline",
+      "cpf": "60469240903",
+      "email": "carol@gmail.com",
+      "endereco": {
+        "logradouro": "Rua Antônio Cavalcanti",
+        "numero": "454",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil",
+        "cep": "58430440"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Carol",
+      "cpf": "54409810472",
+      "email": "carol2@gmail.com",
+      "endereco": {
+        "logradouro": "Rua Antônio Cavalcanti",
+        "numero": "454",
+        "complemento": "",
+        "bairro": "Bodocongó",
+        "cidade": "Campina Grande",
+        "estado": "Paraíba",
+        "pais": "Brasil",
+        "cep": "58430440"
+      }
+    },
+    {
+      "id": "7342",
+      "nome": "Mel Andrade",
+      "cpf": "43116421722",
+      "email": "mel@gmail.com",
+      "telefone": "83988554412",
       "endereco": {
         "cep": "58430460",
         "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "111",
+        "numero": "333",
         "complemento": "casa",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "ef50",
-      "nome": "Cliente 2",
-      "cpf": "85866323842",
-      "email": "cliente2@gmail.com",
-      "telefone": "839999999",
-      "endereco": {
-        "cep": "58430460",
-        "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "123",
-        "complemento": "Casa",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "295b",
-      "nome": "Cliente 3",
-      "cpf": "85866323842",
-      "email": "cliente3@gmail.com",
-      "telefone": "839999999",
-      "endereco": {
-        "cep": "58430460",
-        "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "123",
-        "complemento": "Casa",
-        "bairro": "Bodocongó",
-        "cidade": "Campina Grande",
-        "estado": "Paraíba",
-        "pais": "Brasil"
-      }
-    },
-    {
-      "id": "660c",
-      "nome": "Cliente 4",
-      "cpf": "85866323842",
-      "email": "cliente4@gmail.com",
-      "telefone": "839999999",
-      "endereco": {
-        "cep": "58430460",
-        "logradouro": "Rua Antônio Vieira da Rocha",
-        "numero": "123",
-        "complemento": "Casa",
         "bairro": "Bodocongó",
         "cidade": "Campina Grande",
         "estado": "Paraíba",

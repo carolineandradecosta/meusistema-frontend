@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { Button, Container, Modal, ModalBody, ModalFooter, OverlayTrigger, Table, Tooltip } from 'react-bootstrap'
 import { FaEdit, FaExclamationTriangle, FaPlus, FaQuestionCircle, FaTrash } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../../services/api'
 
 const ClienteList = () => {
 
-  const apiUrl = import.meta.env.VITE_API_URL
   const [clientes, setClientes] = useState([])
   const [modalAberto, setModalAberto] = useState(false)
   const [clienteSelecionado, setClienteSelecionado] = useState(null)
 
   useEffect(() => {
-    axios.get(`${apiUrl}/clientes`)
+    api
+    .get('/clientes')
     .then(response => setClientes(response.data))
     .catch(error => console.error("Erro ao carregar cliente: ", error))
   }, [])
@@ -28,7 +28,8 @@ const ClienteList = () => {
   }
 
   const removerCliente = () => {
-    axios.delete(`${apiUrl}/clientes/${clienteSelecionado.id}`)
+    api
+    .delete(`/clientes/${clienteSelecionado.id}`)
     .then(() => {
       setClientes(prev => prev.filter(c => c.id !== clienteSelecionado.id))
       fecharModal()

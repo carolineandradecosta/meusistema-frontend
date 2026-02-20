@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa'
 import { useState } from 'react'
 import axios from 'axios'
+import api from '../../services/api'
 
 const FornecedorForm = () => {
 
@@ -13,20 +14,18 @@ const FornecedorForm = () => {
     // useEffect para carregar as informações para editar
     useEffect(() => {
         if (id) {
-            axios.get(`${apiUrl}/fornecedores/${id}`)
+            api.get(`/fornecedores/${id}`)
             .then(response => setFornecedor(response.data))
             .catch(error => console.error("Houve um erro ao carregar o fornecedor: ", error))
         }
     }, [id])
 
     const navigate = useNavigate()
-    
-    const apiUrl = import.meta.env.VITE_API_URL
 
     const [modalAberto, setModalAberto] = useState(false)
 
     const [fornecedor, setFornecedor] = useState({
-        nome: "",
+        nomeFantasia: "",
         email: "",
         cnpj: "",
         tipoFornecedor: "COMUM",
@@ -77,8 +76,8 @@ const FornecedorForm = () => {
         }
 
         const request = id
-        ? axios.put(`${apiUrl}/fornecedores/${id}`, fornecedorData)
-        : axios.post(`${apiUrl}/fornecedores/`, fornecedorData)
+        ? api.put(`/fornecedores/${id}`, fornecedorData)
+        : api.post('/fornecedores', fornecedorData)
 
         request.then(() => setModalAberto(true))
         .catch(error => console.error("Erro ao cadastrar/editar fornecedor: ", error))
@@ -115,8 +114,8 @@ const FornecedorForm = () => {
                 <Form.Control
                     type="text"
                     required
-                    value={fornecedor.nome}
-                    onChange={e => setFornecedor({ ...fornecedor, nome: e.target.value })}
+                    value={fornecedor.nomeFantasia}
+                    onChange={e => setFornecedor({ ...fornecedor, nomeFantasia: e.target.value })}
                 />
             </Form.Group>
 

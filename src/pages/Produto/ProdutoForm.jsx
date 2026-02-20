@@ -1,156 +1,151 @@
-import React, { useEffect } from "react";
-import {
-  Button,
-  Container,
-  Form,
-  OverlayTrigger,
-  Tooltip,
-  Modal,
-} from "react-bootstrap";
-import { FaQuestionCircle, FaCheckCircle } from "react-icons/fa";
-import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect, useState } from 'react'
+import { Button, Col, Container, Form, Modal, OverlayTrigger, Row, Tooltip } from 'react-bootstrap'
+import { useNavigate, useParams } from 'react-router-dom'
+import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa'
+import api from '../../services/api'
 
 const ProdutoForm = () => {
-  const apiUrl = import.meta.env.VITE_API_URL;
-  const { id } = useParams();
-  const navigate = useNavigate();
+  const { id } = useParams()
+  const navigate = useNavigate()
+
+  const [modalAberto, setModalAberto] = useState(false)
+  const [fornecedores, setFornecedores] = useState([])
+
   const [produto, setProduto] = useState({
-    nome: "",
-    preco: "",
-    descricao: "",
-    quantidadeEstoque: "",
-    fornecedorId: "",
-  });
-
-  const [fornecedores, setFornecedores] = useState([]);
-  const [modalAberto, setModalAberto] = useState(false);
-
-  const handlePrecoChange = (e) => {
-    let valor = e.target.value;
-
-    // Substituir vírgula por ponto
-    valor = valor.replace(",", ".");
-
-    // Remover caracteres que não sejam dígitos ou ponto
-    valor = valor.replace(/[^0-9.]/g, "");
-
-    // Garantir que tenha no máximo um ponto e duas casas decimais
-    if (valor.includes(".")) {
-      const [parteInteira, parteDecimal] = valor.split(".");
-      valor =
-        parteInteira + "." + (parteDecimal ? parteDecimal.slice(0, 2) : "");
-    }
-
-    // Atualizar o estado do produto com o valor formatado
-    setProduto({ ...produto, preco: valor });
-  }
+    nome: '',
+    preco: '',
+    descricao: '',
+    quantidadeEstoque: '',
+    fornecedorId: '',
+  })
 
   useEffect(() => {
-    axios
-      .get(`${apiUrl}/fornecedores`)
-      .then((response) => setFornecedores(response.data))
-      .catch((error) =>
-        console.error("Houve um erro ao carregar fornecedores: ", error)
-      );
-  }, []);
+    api
+      .get('/fornecedores')
+      .then(response => setFornecedores(response.data))
+      .catch(error => console.error('Erro ao carregar fornecedores: ', error))
+  }, [])
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    if (id) {
+      api
+        .get(`/produtos/${id}`)
+        .then(response => {
+          const data = response.data
+          setProduto({
+            nome: data.nome,
+            preco: data.preco,
+            descricao: data.descricao || '',
+            quantidadeEstoque: data.quantidadeEstoque,
+            fornecedorId: data.fornecedor?.id ?? '',
+          })
+        })
+        .catch(error => console.error('Erro ao carregar produto: ', error))
+    }
+  }, [id])
 
-    axios
-      .post(`${apiUrl}/produtos`, produto)
-      .then((response) => {
-        console.log("Produto cadastrado com sucesso: ", response);
-        setModalAberto(true);
-      })
-      .catch((error) => console.error("Erro ao cadastrar produto: ", error));
-  };
+  const handleChange = (campo, valor) => {
+    setProduto(prev => ({
+      ...prev,
+      [campo]: valor,
+    }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+
+    const payload = {
+      nome: produto.nome,
+      preco: produto.preco,
+      descricao: produto.descricao,
+      quantidadeEstoque: Number(produto.quantidadeEstoque),
+      fornecedorId: Number(produto.fornecedorId),
+    }
+
+    const request = id
+      ? api.put(`/produtos/${id}`, payload)
+      : api.post('/produtos', payload)
+
+    request
+      .then(() => setModalAberto(true))
+      .catch(error => console.error('Erro ao cadastrar/editar produto: ', error))
+  }
 
   return (
     <Container className="mt-4">
-      <h2 className="mb-4" d-flex align-itrms-center>
-        {id ? "Editar Produto" : "Adicionar Produto"}
-
+      <h2 className="mb-4 d-flex align-items-center">
+        {id ? 'Editar Produto' : 'Adicionar Produto'}
         <OverlayTrigger
           placement="right"
-          overlay={<Tooltip>Preencha os dados do Produto</Tooltip>}
+          overlay={<Tooltip>Preencha os dados do produto</Tooltip>}
         >
-          <span className="ms-2" style={{ cursor: "pointer" }}>
+          <span className="ms-2" style={{ cursor: 'pointer' }}>
             <FaQuestionCircle />
           </span>
         </OverlayTrigger>
       </h2>
 
       <Form onSubmit={handleSubmit}>
-        {/* Campo Nome do Produto */}
-
         <Form.Group className="mb-3">
-          <Form.Label>Nome do Produto</Form.Label>
+          <Form.Label>Nome</Form.Label>
           <Form.Control
             type="text"
             required
             value={produto.nome}
-            onChange={(e) => setProduto({ ...produto, nome: e.target.value })}
+            onChange={e => handleChange('nome', e.target.value)}
           />
         </Form.Group>
 
-        {/* Campo Preço */}
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Preço</Form.Label>
+              <Form.Control
+                type="number"
+                min="0"
+                step="0.01"
+                required
+                value={produto.preco}
+                onChange={e => handleChange('preco', e.target.value)}
+              />
+            </Form.Group>
+          </Col>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Preço</Form.Label>
-          <Form.Control
-            type="text"
-            required
-            value={produto.preco}
-            onChange={handlePrecoChange}
-          />
-        </Form.Group>
-
-        {/* Campo Descrição */}
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Quantidade em estoque</Form.Label>
+              <Form.Control
+                type="number"
+                min="0"
+                required
+                value={produto.quantidadeEstoque}
+                onChange={e => handleChange('quantidadeEstoque', e.target.value)}
+              />
+            </Form.Group>
+          </Col>
+        </Row>
 
         <Form.Group className="mb-3">
           <Form.Label>Descrição</Form.Label>
           <Form.Control
-            type="text"
-            required
+            as="textarea"
+            rows={3}
             value={produto.descricao}
-            onChange={(e) =>
-              setProduto({ ...produto, descricao: e.target.value })
-            }
+            onChange={e => handleChange('descricao', e.target.value)}
           />
         </Form.Group>
-
-        {/* Campo Quantidade */}
-
-        <Form.Group className="mb-3">
-          <Form.Label>Quantidade em Estoque</Form.Label>
-          <Form.Control
-            type="number"
-            required
-            value={produto.quantidadeEstoque}
-            onChange={(e) =>
-              setProduto({ ...produto, quantidadeEstoque: e.target.value })
-            }
-          />
-        </Form.Group>
-
-        {/* Campo Fornecedor */}
 
         <Form.Group className="mb-3">
           <Form.Label>Fornecedor</Form.Label>
           <Form.Select
             required
             value={produto.fornecedorId}
-            onChange={(e) =>
-              setProduto({ ...produto, fornecedorId: e.target.value })
-            }
+            onChange={e => handleChange('fornecedorId', e.target.value)}
           >
-            <option>Selecione um fornecedor</option>
-            {fornecedores.map((fornecedor) => (
+            <option value="">Selecione um fornecedor</option>
+            {fornecedores.map(fornecedor => (
               <option key={fornecedor.id} value={fornecedor.id}>
-                {fornecedor.nome}
+                {fornecedor.nomeFantasia}
               </option>
             ))}
           </Form.Select>
@@ -161,13 +156,11 @@ const ProdutoForm = () => {
         </Button>
       </Form>
 
-      {/* Modal de Sucesso */}
-
       <Modal
         show={modalAberto}
         onHide={() => {
-          setModalAberto(false);
-          navigate("/listar-produtos");
+          setModalAberto(false)
+          navigate('/listar-produtos')
         }}
       >
         <Modal.Header closeButton>
@@ -176,21 +169,16 @@ const ProdutoForm = () => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {id
-            ? "Produto editado com sucesso"
-            : "Produto adicionado com sucesso"}
+          {id ? 'Produto editado com sucesso' : 'Produto adicionado com sucesso'}
         </Modal.Body>
         <Modal.Footer>
-          <Button
-            variant="success"
-            onClick={() => navigate("/listar-produtos")}
-          >
+          <Button variant="success" onClick={() => navigate('/listar-produtos')}>
             Fechar
           </Button>
         </Modal.Footer>
       </Modal>
     </Container>
-  );
-};
+  )
+}
 
-export default ProdutoForm;
+export default ProdutoForm

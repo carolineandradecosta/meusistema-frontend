@@ -4,6 +4,7 @@ import { FaCheckCircle, FaQuestionCircle } from 'react-icons/fa'
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
+import api from '../../services/api'
 
 const ClienteForm = () => {
 
@@ -11,15 +12,15 @@ const ClienteForm = () => {
 
   useEffect(() => {
         if (id) {
-            axios.get(`${apiUrl}/clientes/${id}`)
-            .then(response => setCliente(response.data))
-            .catch(error => console.error("Houve um erro ao carregar o fornecedor: ", error))
+            api.get(`/clientes/${id}`)
+            .then(response => {
+                setCliente(response.data)
+            })
+            .catch(error => console.error("Houve um erro ao carregar o cliente: ", error))
         }
     }, [id])
 
   const navigate = useNavigate()
-
-  const apiUrl = import.meta.env.VITE_API_URL
 
   const [modalAberto, setModalAberto] = useState(false)
 
@@ -70,9 +71,17 @@ const ClienteForm = () => {
   const handleSubmit = (e) => {
         e.preventDefault()
 
+        const payload = {
+            nome: cliente.nome,
+            cpf: cliente.cpf,
+            email: cliente.email,
+            endereco: cliente.endereco
+        }
+
+
         const request = id
-        ? axios.put(`${apiUrl}/clientes/${id}`, cliente)
-        : axios.post(`${apiUrl}/clientes/`, cliente)
+        ? api.put(`/clientes/${id}`, payload)
+        : api.post('/clientes', payload)
 
         request.then(() => setModalAberto(true))
         .catch(error => console.error("Erro ao cadastrar/editar cliente: ", error))
